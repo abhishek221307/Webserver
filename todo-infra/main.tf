@@ -37,7 +37,7 @@ module "vnet" {
   depends_on = [module.resource_group_name]
   source     = "../module/azurerm_vnet"
 
-  virtual_network_name = "polaris_vnet102"
+  virtual_network_name = "polaris_vnet101"
   address_space        = ["192.167.0.0/16"]
   location             = "Japan East"
   rg_name              = "polaris_rgroup"

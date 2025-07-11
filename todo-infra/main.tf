@@ -24,6 +24,16 @@ module "vnet" {
   rg_name              = "polaris_rgroup"
 }
 
+module "vnet" {
+  depends_on = [module.resource_group_name]
+  source     = "../module/azurerm_vnet"
+
+  virtual_network_name = "polaris_vnet2"
+  address_space        = ["192.167.0.0/16"]
+  location             = "Japan East"
+  rg_name              = "polaris_rgroup"
+}
+
 variable "subnet_config" {
   type = map(any)
   default = {
